@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+    <main class="page-shell">
+      <h1>Pulse Pad</h1>
+      <p>Tap the pads or use your keyboard to create tones and watch the visualizer respond.</p>
+      <canvas id="visualizer" width="900" height="280"></canvas>
+      <div class="pad-grid">
+        <button class="pad" data-note="A" data-frequency="261.63">A</button>
+        <button class="pad" data-note="S" data-frequency="293.66">S</button>
+        <button class="pad" data-note="D" data-frequency="329.63">D</button>
+        <button class="pad" data-note="F" data-frequency="392.00">F</button>
+        <button class="pad" data-note="J" data-frequency="440.00">J</button>
+        <button class="pad" data-note="K" data-frequency="493.88">K</button>
+        <button class="pad" data-note="L" data-frequency="523.25">L</button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

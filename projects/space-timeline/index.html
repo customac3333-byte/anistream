@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Timeline</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Chronicles of the Cosmos</p>
+        <h1>Milestones in Human Space Exploration</h1>
+      </header>
+
+      <section class="timeline">
+        <article class="event" data-index="0">
+          <h2>1957 • Sputnik</h2>
+          <p>Earth’s first artificial satellite sparked the space age.</p>
+        </article>
+        <article class="event" data-index="1">
+          <h2>1969 • Apollo 11</h2>
+          <p>Humans landed on the Moon for the first time.</p>
+        </article>
+        <article class="event" data-index="2">
+          <h2>1990 • Hubble</h2>
+          <p>Hubble unveiled the universe with extraordinary clarity.</p>
+        </article>
+        <article class="event" data-index="3">
+          <h2>2021 • Mars Perseverance</h2>
+          <p>Perseverance began a new era of robotic exploration.</p>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="event-dialog">
+      <h3 id="dialog-title"></h3>
+      <p id="dialog-body"></p>
+      <button id="close-dialog">Close</button>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

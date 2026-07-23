@@ -1,0 +1,48 @@
+:root {
+  --bg: #060816;
+  --panel: #0f172a;
+  --panel-2: #111d33;
+  --border: rgba(255,255,255,0.12);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --accent-2: #22d3ee;
+  --danger: #ff5b78;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, rgba(34,211,238,0.2), transparent 30%), linear-gradient(135deg, #050816 0%, #0f172a 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+.back-link {
+  position: fixed; top: 16px; left: 16px; z-index: 20; text-decoration: none; color: var(--text); background: rgba(255,255,255,0.08); padding: 10px 12px; border-radius: 999px; backdrop-filter: blur(10px);
+}
+.app-shell { max-width: 1480px; margin: 0 auto; padding: 48px 20px 32px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: rgba(15,23,42,0.9); border: 1px solid var(--border); border-radius: 24px; padding: 14px 16px; margin-bottom: 16px; backdrop-filter: blur(10px); }
+.topbar-left { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.file-picker, .drop-zone, .topbar-actions button, .topbar-actions select, .topbar-actions input {
+  border-radius: 999px; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); padding: 10px 12px;
+}
+.file-picker input { display: none; }
+.drop-zone { min-width: 180px; text-align: center; color: var(--muted); }
+.topbar-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.workspace { display: grid; grid-template-columns: 180px minmax(0, 1fr) 300px; gap: 16px; }
+.toolbar, .sidebar { background: rgba(15,23,42,0.9); border: 1px solid var(--border); border-radius: 24px; padding: 16px; }
+.toolbar h3, .sidebar h3 { margin-top: 0; }
+.tool-btn { display: block; width: 100%; margin-bottom: 10px; border: 1px solid var(--border); background: transparent; color: var(--text); padding: 10px 12px; border-radius: 12px; cursor: pointer; }
+.tool-btn.active { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #050816; font-weight: 700; }
+.canvas-panel { background: rgba(15,23,42,0.9); border: 1px solid var(--border); border-radius: 24px; padding: 16px; }
+.canvas-frame { position: relative; min-height: 620px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: linear-gradient(45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.06)); }
+#editorCanvas { max-width: 100%; max-height: 100%; display: block; cursor: grab; }
+.crop-overlay { position: absolute; inset: 0; pointer-events: none; }
+.canvas-actions { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.canvas-actions button { border: 1px solid var(--border); background: var(--panel-2); color: var(--text); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+.control-group { margin-bottom: 16px; }
+.control-group label { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--muted); margin-bottom: 6px; }
+.control-group input[type="range"], .control-group select { width: 100%; }
+.control-group button { width: 100%; margin-top: 8px; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); padding: 8px 10px; border-radius: 10px; cursor: pointer; }
+@media (max-width: 1180px) { .workspace { grid-template-columns: 1fr; } .toolbar { order: 1; } .canvas-panel { order: 2; } .sidebar { order: 3; } }

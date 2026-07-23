@@ -1,0 +1,40 @@
+:root {
+  --bg: #fff8e1;
+  --ink: #0a0a0a;
+  --pink: #ff0055;
+  --mint: #00ffcc;
+  --yellow: #ffff00;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 24px;
+}
+.back-link {
+  position: fixed; top: 16px; left: 16px; z-index: 20;
+  text-decoration: none; color: var(--ink); background: var(--yellow); border: 4px solid var(--ink); padding: 8px 12px; box-shadow: 5px 5px 0 var(--ink);
+}
+.ticker {
+  overflow: hidden; white-space: nowrap; background: var(--ink); color: var(--mint); padding: 10px 0; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 20px;
+}
+.page-shell { max-width: 1120px; margin: 0 auto; display: grid; gap: 20px; }
+.hero-card, .contact-card, .services {
+  border: 4px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); background: #fff; padding: 24px;
+}
+.hero-card { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; background: var(--pink); color: #fff; }
+.hero-card h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 10px; line-height: 1.05; }
+.eyebrow { text-transform: uppercase; font-weight: 800; letter-spacing: 0.2em; }
+.actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+.btn { border: 4px solid var(--ink); background: var(--yellow); color: var(--ink); padding: 10px 14px; font-weight: 800; cursor: pointer; box-shadow: 4px 4px 0 var(--ink); }
+.btn.primary { background: var(--mint); }
+.hero-stack { display: grid; gap: 10px; }
+.mini-panel { background: var(--yellow); color: var(--ink); border: 4px solid var(--ink); padding: 14px; font-weight: 800; }
+.services h2, .contact-card h2 { margin-top: 0; }
+.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.service-grid article { border: 4px solid var(--ink); padding: 16px; font-weight: 800; background: var(--mint); }
+.contact-card { background: var(--yellow); }
+@media (max-width: 760px) { .hero-card { grid-template-columns: 1fr; } .service-grid { grid-template-columns: 1fr; } }

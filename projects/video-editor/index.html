@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudioVideo Express</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+
+    <div class="editor-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">SV</div>
+          <div>
+            <h1>StudioVideo Express</h1>
+            <p>Professional browser video editor</p>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button data-action="undo">Undo</button>
+          <button data-action="redo">Redo</button>
+          <button data-action="save">Save Project</button>
+          <button data-action="reset">Reset</button>
+          <label class="file-button">
+            <input id="importMedia" type="file" accept="video/*,image/*,audio/*" multiple />
+            Import Media
+          </label>
+          <label class="file-button">
+            <input id="importMusic" type="file" accept="audio/*" />
+            Import Music
+          </label>
+          <button data-action="screenshot">Screenshot</button>
+          <button data-action="fullscreen">Fullscreen</button>
+          <button data-action="render">Render</button>
+          <button data-action="export">Export</button>
+          <button data-action="theme">Theme</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="left-panel">
+          <div class="panel-section">
+            <h3>Media Pool</h3>
+            <div id="mediaPool" class="media-pool"></div>
+          </div>
+
+          <div class="panel-section tabs">
+            <button class="tab active" data-tab="transform">Transform</button>
+            <button class="tab" data-tab="color">Color</button>
+            <button class="tab" data-tab="audio">Audio</button>
+            <button class="tab" data-tab="text">Text</button>
+            <button class="tab" data-tab="effects">Effects</button>
+          </div>
+
+          <div class="panel-section" id="inspector"></div>
+        </aside>
+
+        <main class="main-panel">
+          <section class="preview-panel">
+            <div class="preview-header">
+              <div>
+                <h2>Canvas Compositor</h2>
+                <p>Real-time preview • non-destructive workflow</p>
+              </div>
+              <div class="preview-tools">
+                <button data-view="fit">Fit</button>
+                <button data-view="percent">100%</button>
+                <button data-view="zoom200">200%</button>
+                <button data-view="zoom400">400%</button>
+              </div>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="previewCanvas"></canvas>
+            </div>
+          </section>
+
+          <section class="timeline-panel">
+            <div class="timeline-toolbar">
+              <div class="transport">
+                <button data-transport="play">▶</button>
+                <button data-transport="pause">⏸</button>
+                <button data-transport="stop">■</button>
+                <button data-transport="prev">◀◀</button>
+                <button data-transport="next">▶▶</button>
+              </div>
+              <div class="time-display">00:00:00:00</div>
+              <div class="timeline-tools">
+                <button data-timeline="split">Split</button>
+                <button data-timeline="trim">Trim</button>
+                <button data-timeline="duplicate">Duplicate</button>
+                <button data-timeline="delete">Delete</button>
+              </div>
+            </div>
+            <div class="timeline-ruler" id="timelineRuler"></div>
+            <div class="timeline-track-list" id="timelineTracks"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudioCanvas Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <label class="file-picker">
+            <input id="fileInput" type="file" accept="image/*" />
+            <span>Load Image</span>
+          </label>
+          <div class="drop-zone" id="dropZone">Drag & Drop image here</div>
+        </div>
+
+        <div class="topbar-actions">
+          <select id="presetSelect">
+            <option value="none">Quick Presets</option>
+            <option value="cinematic">Cinematic Teal & Orange</option>
+            <option value="portrait">Cinematic Portrait Film</option>
+            <option value="vintage">Vintage Warm</option>
+            <option value="cyberpunk">Cyberpunk Neon</option>
+            <option value="bw">Classic B&W</option>
+          </select>
+          <button id="undoBtn">Undo</button>
+          <button id="resetBtn">Reset</button>
+          <select id="exportFormat">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+          </select>
+          <input id="jpegQuality" type="range" min="0.5" max="1" step="0.01" value="0.92" />
+          <button id="exportBtn">Export</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="toolbar">
+          <h3>Tools</h3>
+          <button class="tool-btn active" data-tool="adjust">Adjust</button>
+          <button class="tool-btn" data-tool="grade">Color Grade</button>
+          <button class="tool-btn" data-tool="crop">Crop & Size</button>
+          <button class="tool-btn" data-tool="effects">Effects</button>
+          <button class="tool-btn" data-tool="bg">BG Removal</button>
+        </aside>
+
+        <section class="canvas-panel">
+          <div class="canvas-frame">
+            <canvas id="editorCanvas"></canvas>
+            <div class="crop-overlay" id="cropOverlay"></div>
+          </div>
+          <div class="canvas-actions">
+            <button id="rotateLeftBtn">↺ Rotate</button>
+            <button id="rotateRightBtn">↻ Rotate</button>
+            <button id="flipHBtn">⇄ Flip H</button>
+            <button id="flipVBtn">⇅ Flip V</button>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <h3 id="controlTitle">Adjustments</h3>
+          <div id="controls"></div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

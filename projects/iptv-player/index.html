@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPTV Hub Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">IP</div>
+          <div>
+            <h1>IPTV Hub Player</h1>
+            <p>Modern M3U / M3U8 channel experience</p>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <input id="m3uUrlInput" type="text" placeholder="Paste playlist or stream URL" />
+          <button id="loadBtn">Fetch Playlist</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <section class="player-panel">
+          <div class="player-frame">
+            <video id="video" controls autoplay playsinline></video>
+          </div>
+          <div class="player-bar">
+            <div id="currentChannelName" class="channel-title">Select a channel from the list</div>
+            <div class="quality-wrap">
+              <label for="qualitySelect">Quality</label>
+              <select id="qualitySelect" disabled>
+                <option value="-1">Auto</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="sidebar-top">
+            <h2>Channels</h2>
+            <input id="searchBox" type="text" placeholder="Search channels" />
+          </div>
+          <div id="statusMsg" class="status-msg">Loading channels…</div>
+          <ul id="channelList" class="channel-list"></ul>
+        </aside>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

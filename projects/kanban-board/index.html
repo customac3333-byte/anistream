@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+    <main class="page-shell">
+      <header class="topbar">
+        <h1>Flow Board</h1>
+        <button id="add-task-btn">+ Add Task</button>
+      </header>
+
+      <section class="board">
+        <div class="column" data-column="todo">
+          <h2>To Do</h2>
+          <div class="dropzone" id="todo"></div>
+        </div>
+        <div class="column" data-column="progress">
+          <h2>In Progress</h2>
+          <div class="dropzone" id="progress"></div>
+        </div>
+        <div class="column" data-column="done">
+          <h2>Completed</h2>
+          <div class="dropzone" id="done"></div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="task-dialog">
+      <form id="task-form" method="dialog">
+        <h3>Add a task</h3>
+        <input id="task-title" placeholder="Task title" required />
+        <select id="task-status">
+          <option value="todo">To Do</option>
+          <option value="progress">In Progress</option>
+          <option value="done">Completed</option>
+        </select>
+        <div class="dialog-actions">
+          <button value="cancel">Cancel</button>
+          <button value="default" type="submit">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

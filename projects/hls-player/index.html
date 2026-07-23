@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HLS Stream Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="back-link" href="../../index.html">← Back to Hub</a>
+
+    <main class="app-shell">
+      <section class="player-card">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Live media playback</p>
+            <h1>HLS Stream Player</h1>
+            <p class="lead">Load M3U8 playlists directly in the browser with a polished, modern streaming interface.</p>
+          </div>
+          <div class="chip">HLS • M3U8 • Adaptive</div>
+        </div>
+
+        <div class="controls">
+          <input id="streamUrl" type="text" placeholder="Paste your .m3u8 stream URL here" />
+          <button id="loadBtn">Load Stream</button>
+        </div>
+
+        <div class="video-shell">
+          <video id="video" controls playsinline autoplay></video>
+        </div>
+
+        <p id="errorMsg" class="error-msg" role="alert"></p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

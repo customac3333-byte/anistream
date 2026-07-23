@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniStream Free - Direct HLS</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- HLS.js Library for playing raw .m3u8 streams -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="logo">✨ ANISTREAM</div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search anime... (e.g., Naruto, One Piece)" autocomplete="off" />
+        <div id="searchSuggestions" class="suggestions-dropdown hidden"></div>
+      </div>
+      <nav class="nav-links">
+        <button id="trendingBtn" class="nav-btn active" data-view="trending">Trending</button>
+        <button id="popularBtn" class="nav-btn" data-view="popular">Movies</button>
+        <button id="libraryBtn" class="nav-btn" data-view="library">My Library</button>
+      </nav>
+    </header>
+
+    <!-- Continue Watching Strip -->
+    <div id="continueStrip" class="continue-strip hidden"></div>
+
+    <!-- UI State Views -->
+    <main class="content-container">
+      <!-- 1. Grid View -->
+      <section id="gridView" class="view visible">
+        <h2 id="gridTitle" class="section-title">🔥 Trending Anime</h2>
+        <div id="animeGrid" class="anime-grid"></div>
+      </section>
+
+      <!-- 2. Details View -->
+      <section id="detailsView" class="view hidden">
+        <button class="back-btn back-details-btn">← Back to Explore</button>
+        <div id="heroBanner" class="hero-banner"></div>
+        <div class="details-content">
+          <h1 id="detailTitle">Anime Title</h1>
+          <div id="detailMeta" class="detail-meta"></div>
+          <div id="detailGenres" class="genre-tags"></div>
+          <p id="detailSynopsis" class="detail-synopsis"></p>
+          <div class="details-actions">
+            <button id="watchBtn" class="primary-btn">▶ Watch Episode 1</button>
+            <button id="favoriteToggle" class="secondary-btn">♡ Add to Favorites</button>
+          </div>
+          <h3>Episodes</h3>
+          <div id="episodeGrid" class="episode-grid"></div>
+        </div>
+      </section>
+
+      <!-- 3. Player View -->
+      <section id="playerView" class="view hidden">
+        <button class="back-btn back-player-btn">← Back to Details</button>
+        <div class="player-container">
+          <h2 id="playerTitle">Anime Title</h2>
+          <p id="playerEpisode" class="player-ep-subtitle">Episode 1</p>
+          
+          <!-- External Embed Player -->
+          <div class="video-wrapper">
+            <iframe
+              id="videoPlayer"
+              class="video-player"
+              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+
+          <div class="player-controls">
+            <button id="prevEpisodeBtn" class="control-btn">← Previous</button>
+            <div class="server-picker">
+              <label for="serverSelect">Source: </label>
+              <select id="serverSelect" class="server-select">
+                <option value="0">Server 1</option>
+                <option value="1">Server 2</option>
+                <option value="2">Server 3</option>
+              </select>
+            </div>
+            <button id="nextEpisodeBtn" class="control-btn">Next →</button>
+          </div>
+          <div class="ep-indicator">Episode <span id="currentEpNum">1</span> / <span id="totalEpNum">12</span></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Feedback Overlay -->
+    <div id="loadingSpinner" class="spinner-overlay hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="errorMessage" class="toast-error hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
