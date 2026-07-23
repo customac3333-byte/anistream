@@ -1,4 +1,4 @@
-# Static Projects Hub
+# Static Projects Hub ( Sololy Created by Amin Nepali )
 
 A polished collection of browser-based frontend experiments built with HTML, CSS, and vanilla JavaScript.
 
@@ -61,18 +61,13 @@ Because the projects are static files, you can open them directly in a browser, 
 
 - Open [static-projects-hub/index.html](static-projects-hub/index.html) in your browser.
 
-### Option 2: Run a local server
+### Option 2: run the hosted website
 
 From the project root:
 
-```bash
-python -m http.server 8000
-```
 
-Then visit:
-
-```text
-http://localhost:8000/static-projects-hub/
+```visit here
+https://customac3333-byte.github.io/anistream/
 ```
 
 ## Highlights
